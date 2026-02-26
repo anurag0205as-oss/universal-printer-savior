@@ -1,0 +1,7 @@
+{
+  "name": "universal-printer-savior",
+  "cleanUrls": true,
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/$1" }
+  ]
+}
