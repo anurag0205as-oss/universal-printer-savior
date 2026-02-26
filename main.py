@@ -21,6 +21,13 @@ RESET_DB = {
     "L3260": {"main_pad": 0x2f, "platen_pad": 0x38},
     "L5190": {"main_pad": 0x2f, "platen_pad": 0x38},
     "L5290": {"main_pad": 0x2f, "platen_pad": 0x38},
+    # Canon G-Series (Expansion)
+    "G1010": {"main_pad": 0x3c, "platen_pad": 0x40},
+    "G2010": {"main_pad": 0x3c, "platen_pad": 0x40},
+    "G3010": {"main_pad": 0x3c, "platen_pad": 0x40},
+    "G4010": {"main_pad": 0x3c, "platen_pad": 0x40},
+    "G1000": {"main_pad": 0x3c, "platen_pad": 0x40},
+    "G2000": {"main_pad": 0x3c, "platen_pad": 0x40},
 }
 
 import hashlib
