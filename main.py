@@ -23,11 +23,23 @@ RESET_DB = {
     "L5290": {"main_pad": 0x2f, "platen_pad": 0x38},
 }
 
-def get_reset_command(address):
-    header = b'\x44\x54\x00\x12\x00\x00'
-    return header + bytes([address]) + (b'\x00' * 16)
+import hashlib
+import uuid
 
-def run_reset(printer_name, model_key):
+# License Security
+def get_hwid():
+    return str(uuid.getnode())
+
+def check_activation(key):
+    # Simple hash-based activation for MVP
+    # Key = SHA256(HWID + "SAVIOR_SECRET")
+    expected = hashlib.sha256((get_hwid() + "SAVIOR_SECRET").encode()).hexdigest()[:10].upper()
+    return key.upper() == expected
+
+def run_reset(printer_name, model_key, license_key):
+    if not check_activation(license_key):
+        return "ERROR: Invalid Activation Key. Purchase one at: https://anurag0205as-oss.github.io/universal-printer-savior/"
+
     try:
         offsets = RESET_DB.get(model_key)
         if not offsets:
@@ -43,11 +55,11 @@ def run_reset(printer_name, model_key):
             time.sleep(0.5)
             
             # Reset Main Pad
-            win32print.WritePrinter(hPrinter, get_reset_command(offsets["main_pad"]))
+            win32print.WritePrinter(hPrinter, b'\x44\x54\x00\x12\x00\x00' + bytes([offsets["main_pad"]]) + (b'\x00' * 16))
             time.sleep(0.2)
             
             # Reset Platen Pad
-            win32print.WritePrinter(hPrinter, get_reset_command(offsets["platen_pad"]))
+            win32print.WritePrinter(hPrinter, b'\x44\x54\x00\x12\x00\x00' + bytes([offsets["platen_pad"]]) + (b'\x00' * 16))
             time.sleep(0.2)
             
             # Exit Remote

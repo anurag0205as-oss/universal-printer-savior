@@ -9,11 +9,11 @@ Unlock the "Service Required" error on your Epson EcoTank printer in seconds. No
 - **Zero Cost**: Built for the community, by the community.
 
 ## How to Use
-1.  Download the latest [Release](https://github.com/your-username/universal-printer-savior/releases).
-2.  Connect your printer via USB.
-3.  Run the application.
-4.  Select your printer and click **Reset**.
-5.  Restart your printer.
+1.  Download the latest [Universal_Printer_Savior.exe](https://github.com/anurag0205as-oss/universal-printer-savior/raw/master/dist/Universal_Printer_Savior.exe).
+2.  Run the application on Windows.
+3.  Connecting your printer via USB.
+4.  Copy your **Hardware ID** and click **Buy License** to get your Activation Key.
+5.  Enter Key and click **Reset**.
 
 ## Why this exists?
 Proprietary "Reset Keys" are a scam. Your printer is yours; you shouldn't have to pay to use it after a certain number of prints. This tool uses the standard maintenance protocol to clear the software lock.
