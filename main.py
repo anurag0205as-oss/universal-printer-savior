@@ -11,6 +11,16 @@ RESET_DB = {
     "L3115": {"main_pad": 0x2f, "platen_pad": 0x38},
     "L3150": {"main_pad": 0x2f, "platen_pad": 0x38},
     "L1110": {"main_pad": 0x2f, "platen_pad": 0x38},
+    "L1210": {"main_pad": 0x2f, "platen_pad": 0x38},
+    "L1250": {"main_pad": 0x2f, "platen_pad": 0x38},
+    "L3210": {"main_pad": 0x2f, "platen_pad": 0x38},
+    "L3250": {"main_pad": 0x2f, "platen_pad": 0x38},
+    "L3251": {"main_pad": 0x2f, "platen_pad": 0x38},
+    "L3252": {"main_pad": 0x2f, "platen_pad": 0x38},
+    "L3256": {"main_pad": 0x2f, "platen_pad": 0x38},
+    "L3260": {"main_pad": 0x2f, "platen_pad": 0x38},
+    "L5190": {"main_pad": 0x2f, "platen_pad": 0x38},
+    "L5290": {"main_pad": 0x2f, "platen_pad": 0x38},
 }
 
 def get_reset_command(address):
