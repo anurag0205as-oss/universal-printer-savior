@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marketing Control Panel | $100k Mission</title>
+    <style>
+        :root {
+            --primary: #00d2ff;
+            --bg: #05070a;
+            --card: rgba(255, 255, 255, 0.03);
+            --border: rgba(255, 255, 255, 0.1);
+        }
+
+        body {
+            background: var(--bg);
+            color: #fff;
+            font-family: 'Outfit', sans-serif;
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 25px;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .btn {
+            background: var(--primary);
+            color: #000;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+            width: 100%;
+        }
+
+        .status {
+            font-size: 0.8rem;
+            color: #8b949e;
+            margin-top: 10px;
+        }
+
+        .copy-text {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Sales Control Center 🚀</h1>
+        <p>Aapka $100,000 ka safar yahan se shuru hota hai. Click -> Paste -> Profit.</p>
+    </div>
+
+    <div class="grid">
+        <!-- Lead 1 -->
+        <div class="card">
+            <h3>Lead: Reddit (L3210 Urgent)</h3>
+            <p>Pichle 24 ghante ki sabse badi query. Yahan pehli sale ki chance hai.</p>
+            <textarea class="copy-text"
+                id="msg1">"I fixed my Epson L3210 using this tool. Support 2026 firmware and it's much safer than WIC keys. Only $9.99 for lifetime. Link: https://universal-printer-savior.vercel.app/"</textarea>
+            <button class="btn"
+                onclick="executeOutreach('msg1', 'https://www.reddit.com/r/printers/comments/1izwzh4/epson_l3210_red_light_blinking_and_service/')">Copy
+                Message & Open Link</button>
+        </div>
+
+        <!-- Lead 2 -->
+        <div class="card">
+            <h3>Lead: Reddit (L3110 General)</h3>
+            <p>Epson L-Series ke sabse zyada users yahan dhoondhte hain.</p>
+            <textarea class="copy-text"
+                id="msg2">"Check this out for Epson L3110 reset. It's a fresh 2026 build, no malware. Link: https://universal-printer-savior.vercel.app/"</textarea>
+            <button class="btn"
+                onclick="executeOutreach('msg2', 'https://www.reddit.com/r/techsupport/search/?q=L3110+service+required&restrict_sr=1&sort=new')">Copy
+                Message & Open Link</button>
+        </div>
+
+        <!-- Lead 3 -->
+        <div class="card">
+            <h3>Lead: Canon G-Series (Disruptive)</h3>
+            <p>Canon users ko target karke sales scope badaein.</p>
+            <textarea class="copy-text"
+                id="msg3">"Canon G3010 5B00 error fix is here. Support for G-Series added recently. Best value online: https://universal-printer-savior.vercel.app/"</textarea>
+            <button class="btn"
+                onclick="executeOutreach('msg3', 'https://www.reddit.com/r/printers/search/?q=Canon+G3010+5B00&restrict_sr=1&sort=new')">Copy
+                Message & Open Link</button>
+        </div>
+
+        <!-- Medium SEO -->
+        <div class="card" style="border-color: #ff007a;">
+            <h3>SEO: Medium.com (Article)</h3>
+            <p>Lifetime passive traffic ke liye yeh article post karein.</p>
+            <button class="btn" style="background: #ff007a; color: white;"
+                onclick="window.open('https://medium.com/new-story')">Open Medium Editor</button>
+            <p class="status">Copy content from marketing/reset_l3110.md</p>
+        </div>
+    </div>
+
+    <script>
+        function executeOutreach(elementId, url) {
+            const text = document.getElementById(elementId).value;
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Message Copied to Clipboard! Ab bas open hone wali tab mein Paste (Ctrl+V) karein.');
+                window.open(url, '_blank');
+            });
+        }
+    </script>
+</body>
+
+</html>
